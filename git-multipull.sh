@@ -22,7 +22,7 @@ for repo in `cat repos.txt`; do
     if [ "$tip" == "" ]; then
         tip=`git rev-parse $branch`
     elif [ "$tip" != `git rev-parse $branch` ]; then
-        echo "FATAL: Security check failed: remotes tips don't match. Please check authenticity of the repositories."
+        echo "FATAL: Security check failed: tips of remotes don't match. Please check authenticity of the repositories."
         exit 1
     fi
 done
